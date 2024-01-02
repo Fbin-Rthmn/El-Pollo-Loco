@@ -6,8 +6,6 @@ let keyboard = new Keyboard;
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-
-    console.log('My Character is', world.character);
 }
 
 document.addEventListener('keydown', (e) => {      //hier wird die Taste ausgelesen die gedrückt wurde
@@ -30,7 +28,6 @@ document.addEventListener('keydown', (e) => {      //hier wird die Taste ausgele
     if (e.keyCode == 32) {
         keyboard.SPACE = true;
     }
-    console.log(e);
 })
 
 document.addEventListener('keyup', (e) => {
