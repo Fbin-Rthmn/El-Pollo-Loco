@@ -28,6 +28,10 @@ document.addEventListener('keydown', (e) => {      //hier wird die Taste ausgele
     if (e.keyCode == 32) {
         keyboard.SPACE = true;
     }
+
+    if (e.keyCode == 68) {
+        keyboard.D = true;
+    }
 })
 
 document.addEventListener('keyup', (e) => {
@@ -51,4 +55,7 @@ document.addEventListener('keyup', (e) => {
         keyboard.SPACE = false;
     }
 
+    if (e.keyCode == 68) {
+        keyboard.D = false;
+    }
 })
