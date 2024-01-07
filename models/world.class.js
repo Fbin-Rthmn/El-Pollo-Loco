@@ -23,12 +23,12 @@ class World {
 
     run() {
         setInterval(() => {
-            this.chechCollisions();
+            this.checkCollisions();
             this.checkThrowObjects();
         }, 200);
     }
 
-    chechCollisions() {
+    checkCollisions() {
         this.level.enemies.forEach((enemy) => {
             if( this.character.isColliding(enemy) ) {
                 this.character.hit();
@@ -44,11 +44,16 @@ class World {
         }
     }
 
+    killEnemy() {
+        // this.level.enemies.forEach()
+    }
+
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.ctx.translate(this.camera_x, 0);
         this.addOjectsToMap(this.level.backgroundObjects);
+        this.addOjectsToMap(this.level.clouds);
         
         this.ctx.translate(-this.camera_x, 0);
         // -------------- Space for fixed objects ----------------
@@ -56,7 +61,7 @@ class World {
         this.ctx.translate(this.camera_x, 0);
         
         this.addToMap(this.character);
-        this.addOjectsToMap(this.level.clouds);
+        // this.addOjectsToMap(this.level.clouds);
         this.addOjectsToMap(this.level.enemies);
         this.addOjectsToMap(this.throwableObjects);
         
